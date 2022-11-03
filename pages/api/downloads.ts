@@ -1,49 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import Cors from "cors";
 import isEmpty from "../../utils/isEmpty";
 import isNil from "../../utils/isNil";
 import sum from "../../utils/sum";
-
-// Initializing the cors middleware
-// You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
-const cors = Cors({
-  methods: ["POST", "GET", "HEAD"],
-});
-
-// Helper method to wait for a middleware to execute before continuing
-// And to throw an error when an error happens in a middleware
-function runMiddleware(
-  req: NextApiRequest,
-  res: NextApiResponse,
-  fn: Function
-) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result: any) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-
-      return resolve(result);
-    });
-  });
-}
-
-const formatDate = (date: Date) => date.toISOString().split("T")[0];
+import runMiddleware from "../../middlewares/runMiddleware";
+import cors from "../../middlewares/cors";
 
 interface INpmDownload {
-  [packageName: string | null]: {
+  [packageName: string]: {
     [date: string]: number;
   };
 }
+const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // Run the middleware
-  // await runMiddleware(req, res, cors)
+  await runMiddleware(req, res, cors);
 
-  // Rest of the API logic
   const { author } = req.query;
   const today = new Date();
   const todayOfLastYear = new Date(
