@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://github.com/DukeLuo/github-readme-npm-stats"
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}
