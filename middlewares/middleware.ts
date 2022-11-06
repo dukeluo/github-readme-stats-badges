@@ -28,7 +28,13 @@ export default function middleware(...middlewares: IMiddleware[]) {
   return (handler: NextApiHandler) =>
     async (req: NextApiRequest, res: NextApiResponse) => {
       for (const m of middlewares) {
-        await run(req, res, m);
+        try {
+          await run(req, res, m);
+        } catch (e) {
+          console.error(e);
+
+          return res.status(500).send("Internal Server Error");
+        }
       }
 
       return await handler(req, res);
