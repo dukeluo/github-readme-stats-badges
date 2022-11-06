@@ -2,22 +2,18 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import isEmpty from "../../utils/isEmpty";
 import isNil from "../../utils/isNil";
 import sum from "../../utils/sum";
-import runMiddleware from "../../middlewares/runMiddleware";
 import cors from "../../middlewares/cors";
+import middleware from "../../middlewares/middleware";
 
 interface INpmDownload {
   [packageName: string]: {
     [date: string]: number;
   };
 }
+
 const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  await runMiddleware(req, res, cors);
-
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { author } = req.query;
   const today = new Date();
   const todayOfLastYear = new Date(
@@ -42,3 +38,5 @@ export default async function handler(
 
   return res.json({ count });
 }
+
+export default middleware(cors)(handler);

@@ -1,3 +1,3 @@
-import Cors from "cors";
+import cors from "cors";
 
-export default Cors()
+export default cors()
