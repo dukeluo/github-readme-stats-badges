@@ -4,7 +4,7 @@ interface INextFunction {
   (err?: any): void;
 }
 
-interface IMiddleware {
+export interface IMiddleware {
   (req: NextApiRequest, res: NextApiResponse, next: INextFunction): any;
 }
 
@@ -24,7 +24,7 @@ function run(
   });
 }
 
-export default function middleware(...middlewares: IMiddleware[]) {
+function middleware(...middlewares: IMiddleware[]) {
   return (handler: NextApiHandler) =>
     async (req: NextApiRequest, res: NextApiResponse) => {
       for (const m of middlewares) {
@@ -40,3 +40,5 @@ export default function middleware(...middlewares: IMiddleware[]) {
       return await handler(req, res);
     };
 }
+
+export default middleware;

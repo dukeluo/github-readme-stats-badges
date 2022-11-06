@@ -3,6 +3,7 @@ import isEmpty from "../../utils/isEmpty";
 import isNil from "../../utils/isNil";
 import sum from "../../utils/sum";
 import cors from "../../middlewares/cors";
+import cache from "../../middlewares/cache";
 import middleware from "../../middlewares/middleware";
 
 interface INpmDownload {
@@ -51,4 +52,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-export default middleware(cors)(handler);
+export default middleware(cors, cache)(handler);
