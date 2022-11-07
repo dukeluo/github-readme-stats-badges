@@ -1,5 +1,21 @@
 {
-  "private": true,
+  "name": "github-readme-npm-stats",
+  "description": "Count your npm packages total downloads.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DukeLuo/github-readme-npm-stats"
+  },
+  "keywords": [
+    "github-readme-stats",
+    "readme-stats",
+    "npm downloads"
+  ],
+  "author": "Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/DukeLuo/github-readme-npm-stats/issues"
+  },
+  "homepage": "https://github.com/DukeLuo/github-readme-npm-stats",
   "scripts": {
     "dev": "next",
     "build": "next build",
