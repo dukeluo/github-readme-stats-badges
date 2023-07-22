@@ -4,17 +4,17 @@
 ### How to use
 #### Endpoint
 ```
-https://github-readme-npm-stats.vercel.app/api/downloads?author={npm-username}
+https://github-readme-stats-badges.vercel.app/api/downloads?author={npm-username}
 ```
 
 #### Markdown
 ```md
-![](https://img.shields.io/badge/dynamic/json?label={label}&query=$.count&url=https://github-readme-npm-stats.vercel.app/api/downloads?author={npm-username})
+![](https://img.shields.io/badge/dynamic/json?label={label}&query=$.count&url=https://github-readme-stats-badges.vercel.app/api/downloads?author={npm-username})
 ```
 
 #### Example
 ```md
-![](https://img.shields.io/badge/dynamic/json?label=npm%20downloads&query=$.count&url=https://github-readme-npm-stats.vercel.app/api/downloads?author=dukeluo)
+![](https://img.shields.io/badge/dynamic/json?label=npm%20downloads&query=$.count&url=https://github-readme-stats-badges.vercel.app/api/downloads?author=dukeluo)
 ```
 
-![](https://img.shields.io/badge/dynamic/json?label=npm%20downloads&query=$.count&url=https://github-readme-npm-stats.vercel.app/api/downloads?author=dukeluo)
+![](https://img.shields.io/badge/dynamic/json?label=npm%20downloads&query=$.count&url=https://github-readme-stats-badges.vercel.app/api/downloads?author=dukeluo)

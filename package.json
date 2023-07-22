@@ -1,21 +1,26 @@
 {
-  "name": "github-readme-npm-stats",
-  "description": "Count your npm packages total downloads.",
+  "name": "github-readme-stats-badges",
+  "description": "Add stats badges for your GitHub Readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DukeLuo/github-readme-npm-stats"
+    "url": "git+https://github.com/DukeLuo/github-readme-stats-badges"
   },
   "keywords": [
-    "github-readme-stats",
-    "readme-stats",
-    "npm downloads"
+    "github",
+    "readme",
+    "stats",
+    "badges",
+    "readme stats",
+    "readme badges",
+    "npm downloads",
+    "github stars"
   ],
-  "author": "Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)",
+  "author": "Huan Luo <dukeluo@outlook.com> (https://shaiwang.life)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/DukeLuo/github-readme-npm-stats/issues"
+    "url": "https://github.com/DukeLuo/github-readme-stats-badges/issues"
   },
-  "homepage": "https://github.com/DukeLuo/github-readme-npm-stats",
+  "homepage": "https://github.com/DukeLuo/github-readme-stats-badges",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -36,5 +41,8 @@
     "eslint": "^8.26.0",
     "eslint-config-next": "^13.0.1",
     "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
